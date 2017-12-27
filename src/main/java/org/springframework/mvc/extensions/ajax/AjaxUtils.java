@@ -12,5 +12,9 @@ public class AjaxUtils {
 		return webRequest.getParameter("ajaxUpload") != null;
 	}
 	
-	private AjaxUtils() {}
+	private AjaxUtils()
+	{
+	//Commenting here purposefully!
+	//QA changes!!
+	}
 }
