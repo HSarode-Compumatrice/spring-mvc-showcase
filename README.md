@@ -25,7 +25,7 @@ Clone the repository:
 If this is your first time using Github, review http://help.github.com to learn the basics.
 
 To run the application:
--------------------	
+----------------------------------------------------------------------------------------------	
 From the command line with Maven:
 
     $ cd spring-mvc-showcase
@@ -41,7 +41,7 @@ In your preferred IDE such as SpringSource Tool Suite (STS) or IDEA:
 Access the deployed web application at: http://localhost:8080/spring-mvc-showcase/
 
 Note:
--------------------
+------------------------------------------------------------------------------------------------
 
 This showcase originated from a [blog post](http://blog.springsource.com/2010/07/22/spring-mvc-3-showcase/) and was adapted into a SpringOne presentation called [Mastering MVC 3](http://www.infoq.com/presentations/Mastering-Spring-MVC-3).
 
