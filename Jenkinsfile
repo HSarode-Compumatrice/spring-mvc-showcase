@@ -1,10 +1,13 @@
 node {
+  deploy_target = deploy_target.trim().toLowerCase()
+  git_branch_tag_or_commit = git_branch_tag_or_commit.trim()
+
   properties([
     parameters([
       string(
         name: 'git_branch_tag_or_commit',
         defaultValue: 'develop',
-        description: 'Any branch from https://github.com/HSarode-Compumatrice/spring-mvc-showcase.git'
+        description: 'take required branch from https://github.com/HSarode-Compumatrice/spring-mvc-showcase.git'
         ),
       string(
         name: 'deploy_target',
@@ -15,6 +18,9 @@ node {
   ])
 
   stage('Checkout Codedeploy Branch') {
+    print("-----------------------------------")
+    print("git_branch_tag_or_commit=${git_branch_tag_or_commit}")
+    print("deploy_target=${deploy_target}")
     sh 'date'
     sh 'pwd'
     sh 'echo git_branch_tag_or_commit=$git_branch_tag_or_commit'
@@ -27,9 +33,9 @@ node {
     sh '''
     aws deploy push \
       --application-name springapp \
-      --s3-location s3://springbucket.s3-us-west-2.amazonaws.com/springapp-${BUILD_NUMBER}.zip \
+      --s3-location s3://springappbucket/springapp-${BUILD_NUMBER}.zip \
       --source ${PWD} \
-	  --region us-west-2
+	    --region ap-southeast-1a
     '''
   }
 
@@ -40,12 +46,12 @@ node {
       sh '''
       aws deploy create-deployment \
         --application-name springapp \
-        --s3-location bucket=springbucket.s3-us-west-2.amazonaws.com,key=springapp-${BUILD_NUMBER}.zip,bundleType=zip \
+        --s3-location bucket=springappbucket,key=springapp-${BUILD_NUMBER}.zip,bundleType=zip \
         --deployment-group-name ${deploy_target} \
         --description "Deployed through Jenkins." \
         --auto-rollback-configuration enabled=false \
         --ignore-application-stop-failures \
-        --region us-west-2 \
+        --region ap-southeast-1a \
     '''
    }
   }
