@@ -4,8 +4,8 @@ files:
   - source: /
     destination: /opt/tomcat8/webapps/
   
- hooks:
-   BeforeInstall:
-     - location: /opt/tomcat8/bin/startup.sh
-       timeout: 30
-       runas: root
+hooks:
+  BeforeInstall:
+    - location: /opt/tomcat8/bin/startup.sh
+      timeout: 30
+      runas: root
