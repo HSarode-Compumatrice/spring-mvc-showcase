@@ -32,7 +32,7 @@ node {
       --application-name springapp \
       --s3-location s3://springappbucket/springapp-${BUILD_NUMBER}.zip \
       --source ${PWD} \
-      --region ap-southeast-1a
+      --region ap-southeast-1
     '''
   }
 
@@ -48,7 +48,7 @@ node {
         --description "Deployed through Jenkins." \
         --auto-rollback-configuration enabled=false \
         --ignore-application-stop-failures \
-        --region ap-southeast-1a \
+        --region ap-southeast-1 \
     '''
    }
   }
