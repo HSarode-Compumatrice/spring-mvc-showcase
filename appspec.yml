@@ -8,5 +8,4 @@ hooks:
   BeforeInstall:
     - location: agentstatus.sh
     - location: /opt/tomcat8/bin/startup.sh
-      timeout: 30
       runas: root
