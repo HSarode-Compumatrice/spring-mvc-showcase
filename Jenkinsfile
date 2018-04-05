@@ -18,9 +18,6 @@ node {
   ])
 
   stage('Checkout Codedeploy Branch') {
-    print("-----------------------------------")
-    print("git_branch_tag_or_commit=${git_branch_tag_or_commit}")
-    print("deploy_target=${deploy_target}")
     sh 'date'
     sh 'pwd'
     sh 'echo git_branch_tag_or_commit=$git_branch_tag_or_commit'
@@ -35,7 +32,7 @@ node {
       --application-name springapp \
       --s3-location s3://springappbucket/springapp-${BUILD_NUMBER}.zip \
       --source ${PWD} \
-	    --region ap-southeast-1a
+      --region ap-southeast-1a
     '''
   }
 
