@@ -1,9 +1,10 @@
 version: 0.0
 os: linux
 files:
+  - source: /target/spring-mvc-showcase
+    destination: /opt/tomcat8/webapps/
   - source: /target/*.war
     destination: /opt/tomcat8/webapps/
-  
 hooks:
   BeforeInstall:
     - location: service_status.sh
