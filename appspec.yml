@@ -2,8 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: **/*.war
-    destination: /opt/tomcat8/webapps
+    destination: /opt/tomcat8/webapps/
+  
 hooks:
   BeforeInstall:
     - location: service_status.sh
       runas: root
+      
