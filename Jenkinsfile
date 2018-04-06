@@ -49,4 +49,11 @@ node {
     '''
    }
   }
+  stage('Clean Up Workspace') {
+     post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir()
+        }
+    }	
 }
