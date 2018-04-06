@@ -6,6 +6,6 @@ files:
   
 hooks:
   BeforeInstall:
-    - location: ./agentstatus.sh
+    - location: agentstatus.sh
   #  - location: /opt/tomcat8/bin/startup.sh
       runas: root
