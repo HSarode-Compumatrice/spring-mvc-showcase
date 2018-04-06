@@ -8,4 +8,5 @@ hooks:
     - location: service_status.sh
     - location:	codedeploy.sh
       runas: root
-      
+  AfterInstall:
+    - location: cleanup.sh    
