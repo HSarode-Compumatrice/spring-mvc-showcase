@@ -25,7 +25,15 @@ node {
     checkout scm
     sh 'git log -n 1'
   }
-
+  
+  stage('Building Project') {
+    sh 'pwd'
+	  sh 'ls -lthr'
+	  sh 'cd $WORKSPACE'
+    sh 'mvn package'
+	  sh 'ls -lthr $WORKSPACE/target'
+	}
+   
   stage('Push archive to S3'){
     sh '''
     aws deploy push \
