@@ -48,7 +48,7 @@ node {
         --description "Deployed through Jenkins." \
         --auto-rollback-configuration enabled=false \
         --ignore-application-stop-failures \
-        --region ap-southeast-1 \
+        --region ap-southeast-1 
     '''
    }
   }
