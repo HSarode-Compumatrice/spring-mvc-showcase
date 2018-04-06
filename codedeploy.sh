@@ -2,6 +2,6 @@
 #CodeDeploy Script which generates project specific WAR
 #
 pwd
-ls -lthr
+cd $WORKSPACE
 mvn package
 ls -lthr $WORKSPACE/target
