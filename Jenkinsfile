@@ -20,6 +20,7 @@ node {
   stage('Checkout Codedeploy Branch') {
     sh 'date'
     sh 'pwd'
+    sh 'whoami'		  
     sh 'echo git_branch_tag_or_commit=$git_branch_tag_or_commit'
     sh 'echo deploy_target=$deploy_target'
     checkout scm
