@@ -6,7 +6,7 @@ node {
     parameters([
       string(
         name: 'git_branch_tag_or_commit',
-        defaultValue: 'develop',
+        defaultValue: '',
         description: 'take required branch from https://github.com/HSarode-Compumatrice/spring-mvc-showcase.git'
         ),
       string(
