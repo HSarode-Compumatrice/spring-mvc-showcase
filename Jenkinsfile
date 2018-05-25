@@ -13,7 +13,6 @@ node {
       )
     ])
   ])
-
   stage('Checkout Codedeploy Branch') {
     sh 'date'
     sh 'pwd'
@@ -45,7 +44,7 @@ node {
         --description "Deployed through Jenkins." \
         --auto-rollback-configuration enabled=false \
         --ignore-application-stop-failures \
-        --region us-west-2 \
+        --region us-west-2 
     '''
    }
   }
